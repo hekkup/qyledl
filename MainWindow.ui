@@ -291,7 +291,7 @@
      <x>0</x>
      <y>0</y>
      <width>652</width>
-     <height>25</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -300,9 +300,9 @@
     </property>
     <addaction name="actionQuit"/>
    </widget>
-   <widget class="QMenu" name="menuEdit">
+   <widget class="QMenu" name="menuSettings">
     <property name="title">
-     <string>&amp;Edit</string>
+     <string>&amp;Settings</string>
     </property>
     <widget class="QMenu" name="menuLanguage">
      <property name="title">
@@ -311,11 +311,10 @@
      <addaction name="actionFinnish"/>
      <addaction name="actionEnglish"/>
     </widget>
-    <addaction name="separator"/>
     <addaction name="menuLanguage"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuEdit"/>
+   <addaction name="menuSettings"/>
   </widget>
   <action name="actionQuit">
    <property name="text">
@@ -342,6 +341,11 @@
    </property>
    <property name="text">
     <string>&amp;English</string>
+   </property>
+  </action>
+  <action name="action_Language">
+   <property name="text">
+    <string>&amp;Language</string>
    </property>
   </action>
  </widget>
