@@ -8,13 +8,15 @@ The GUI is written in C++/[Qt](http://qt-project.org/) and currently requires yl
 
 qyledl is based on [mpartel's yle-downloader-gui](https://github.com/mpartel/yle-downloader-gui).
 
-Snapshot packages for Ubuntu are available from https://launchpad.net/~hekkup/+archive/yle-downloader-gui-snapshots.
+Snapshot packages for Ubuntu are available at https://launchpad.net/~hekkup/+archive/yle-downloader-gui-snapshots.
+
+Release packages for Ubuntu will be available at https://launchpad.net/~yle-dl/+archive/release.
 
 See below for instructions for installation in Windows.
 
 ## Compiling ##
 
-- `lrelease yle-downloader-gui.pro`
+- `lrelease qyledl.pro`
 - `qmake`
 - `make`
 
@@ -26,7 +28,7 @@ See below for instructions for installation in Windows.
 
 ## Installation in Linux ##
 
-In order to install the application in Linux run the following command. If it doesn't work, please check the installation paths of files in `yle-downloader-gui.pro` project file. The file paths have been tested on Kubuntu 13.04 and they should be more or less the same in other distributions, too.
+In order to install the application in Linux run the following command. If it doesn't work, please check the installation paths of files in `qyledl.pro` project file. The file paths have been tested on Kubuntu 13.10 and they should be more or less the same in other distributions, too.
 
 - `sudo make install`
 
@@ -36,9 +38,11 @@ Uninstallation:
 
 ## Installation in Windows ##
 
-An installation package for Windows is available at http://mpartel.github.io/yle-downloader-gui/
+qyledl is not tested on or packaged for Windows. If you want to do it, you are welcome to fork this repository and go ahead!
 
-Instructions for generating a precompiled installation package for Windows are available at https://github.com/mpartel/yle-downloader-gui#yle-areena-downloader-gui
+An installation package of yle-downloader-gui for Windows is available at http://mpartel.github.io/yle-downloader-gui/. Instructions for generating a precompiled installation package of yle-downloader-gui for Windows are available at https://github.com/mpartel/yle-downloader-gui#yle-areena-downloader-gui.
+
+The source code contains installer/innosetup_installer.iss file but it's outdated.
 
 
 ## Known Issues ##
@@ -58,6 +62,8 @@ Instructions for generating a precompiled installation package for Windows are a
     * New fork: qyledl
     * Version numbering continued directly from yle-downloader-gui
     * Added download queue, support for English, etc.
+
+(NOTE: the versions below are those of yle-downloader-gui)
 
 - 2.2 (2013-02-21)
     * Updated yle-dl to 2.0.2.

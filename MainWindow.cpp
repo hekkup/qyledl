@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
-    this->setWindowTitle(this->windowTitle() + " " + tr("(v%1)").arg(YLE_DOWNLOADER_GUI_VERSION));
+    this->setWindowTitle(this->windowTitle() + " " + tr("(v%1)").arg(QYLEDL_VERSION));
 
     initSubtitlesComboBox();
 

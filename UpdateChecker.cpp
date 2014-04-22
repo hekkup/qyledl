@@ -11,7 +11,7 @@ UpdateChecker::UpdateChecker(QObject *parent)
 
 void UpdateChecker::checkForUpdate()
 {
-    QUrl downloadUrl("https://raw.github.com/mpartel/yle-downloader-gui/master/update.xml");
+    QUrl downloadUrl("https://raw.github.com/hekkup/qyledl/master/update.xml");
     QNetworkRequest req(downloadUrl);
     m_nam->get(req);
 }
@@ -52,7 +52,7 @@ void UpdateChecker::replyFinished(QNetworkReply* reply)
 
 bool UpdateChecker::isNewerVersion(QString remoteVersion)
 {
-    QStringList parts = QString(cleanVersionNum(YLE_DOWNLOADER_GUI_VERSION)).split('.');
+    QStringList parts = QString(cleanVersionNum(QYLEDL_VERSION)).split('.');
     QStringList remoteParts = cleanVersionNum(remoteVersion).split('.');
     int partCount = qMax(parts.length(), remoteParts.length());
 

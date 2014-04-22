@@ -9,14 +9,14 @@ contains(QT_MAJOR_VERSION, 5) {
     message("Qt version < 5.0")
 }
 
-TARGET = yle-downloader-gui
+TARGET = qyledl
 TEMPLATE = app
 
 unix {
     target.path = /usr/bin
-    icon.files = icons/yle-downloader-gui.svg
+	icon.files = icons/qyledl.svg
     icon.path = /usr/share/pixmaps
-    desktopFile.files = yle-downloader-gui.desktop
+	desktopFile.files = qyledl.desktop
     desktopFile.path = /usr/share/applications
     INSTALLS += target icon desktopFile
 }
@@ -58,5 +58,5 @@ RC_FILE = windows-resources.rc
 OTHER_FILES += \
     windows-resources.rc \
     README.md \
-    "Tietoa ohjelmasta.txt" \
+	"Tietoa_ohjelmasta.txt" \
     update.xml

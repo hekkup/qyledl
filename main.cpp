@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
     QApplication::setOrganizationName("nobody");
-    QApplication::setApplicationName("yle-downloader-gui");
+    QApplication::setApplicationName("qyledl");
 
     QSettings settings;
     QVariant localeNameVar = settings.value("language", QVariant());
