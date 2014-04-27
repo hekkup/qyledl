@@ -165,9 +165,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="cancelButton">
+        <widget class="QPushButton" name="stopButton">
          <property name="text">
-          <string>&amp;Cancel</string>
+          <string>&amp;Stop</string>
          </property>
         </widget>
        </item>

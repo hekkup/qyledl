@@ -13,7 +13,7 @@ VideoInfo::VideoInfo(QObject *parent) :
     m_videoStateStrings[VideoInfo::StateStarting] = tr("Starting...");
     m_videoStateStrings[VideoInfo::StateLoading] = tr("Loading...");
     m_videoStateStrings[VideoInfo::StateLoadedOk] = tr("Loaded");
-    m_videoStateStrings[VideoInfo::StateCanceled] = tr("Canceled");
+    m_videoStateStrings[VideoInfo::StateCanceled] = tr("Stopped");
     m_videoStateStrings[VideoInfo::StateFailed] = tr("Failed");
     m_fileName = QString("");
 }

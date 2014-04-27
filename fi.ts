@@ -19,6 +19,11 @@
         <translation>&amp;Valitse...</translation>
     </message>
     <message>
+        <location filename="MainWindow.ui" line="170"/>
+        <source>&amp;Stop</source>
+        <translation>&amp;Pysäytä</translation>
+    </message>
+    <message>
         <location filename="MainWindow.ui" line="261"/>
         <source>Extra options for yle-dl</source>
         <translation>yle-dl:n lisäoptiot</translation>
@@ -49,7 +54,6 @@
         <translation>&amp;Lataa</translation>
     </message>
     <message>
-        <location filename="MainWindow.ui" line="170"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Peruuta</translation>
     </message>
@@ -142,8 +146,9 @@
     </message>
     <message>
         <location filename="MainWindow.cpp" line="445"/>
-        <source>Really cancel download?</source>
-        <translation>Peruutetaanko lataus varmasti?</translation>
+        <source>Really stop download?</source>
+        <oldsource>Really cancel download?</oldsource>
+        <translation>Pysäytetäänkö lataus varmasti?</translation>
     </message>
     <message>
         <location filename="MainWindow.cpp" line="477"/>
@@ -347,6 +352,10 @@
     </message>
     <message>
         <location filename="VideoInfo.cpp" line="16"/>
+        <source>Stopped</source>
+        <translation>Pysäytetty</translation>
+    </message>
+    <message>
         <source>Canceled</source>
         <translation>Peruutettu</translation>
     </message>

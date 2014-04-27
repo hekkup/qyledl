@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     updateDestDirLabel();
     ui->statusLabel->setText("");
-    ui->cancelButton->setVisible(false);
+    ui->stopButton->setVisible(false);
     ui->detailsWidget->setVisible(false);
     ui->updateLabel->setVisible(false);
 
@@ -68,7 +68,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->destDirButton, SIGNAL(clicked()), this, SLOT(chooseDestDir()));
     connect(ui->downloadButton, SIGNAL(clicked()), this, SLOT(startDownload()));
 
-    connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(cancelRequested()));
+    connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(cancelRequested()));
 
     connect(ui->detailsButton, SIGNAL(toggled(bool)), ui->detailsWidget, SLOT(setVisible(bool)));
 
@@ -214,7 +214,7 @@ void MainWindow::startDownload()
     }
     ui->detailsTextEdit->clear();
     setDownloadWidgetsDisabled(true);
-    ui->cancelButton->setVisible(true);
+    ui->stopButton->setVisible(true);
 
     setCurrentlyDownloadingVideoRow(-1);
     startNextDownload();
@@ -442,7 +442,7 @@ bool MainWindow::confirmCancel()
     QMessageBox::StandardButton choice =
             QMessageBox::question(this,
                                   this->windowTitle(),
-                                  tr("Really cancel download?"),
+                                  tr("Really stop download?"),
                                   QMessageBox::Yes | QMessageBox::No,
                                   QMessageBox::Yes);
 
@@ -456,7 +456,7 @@ void MainWindow::downloadEnded()
 
     setDownloadWidgetsDisabled(false);
 
-    ui->cancelButton->setVisible(false);
+    ui->stopButton->setVisible(false);
     ui->statusLabel->setText("");
 
     m_updateChecker->checkForUpdate();

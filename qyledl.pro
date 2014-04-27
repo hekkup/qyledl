@@ -14,9 +14,9 @@ TEMPLATE = app
 
 unix {
     target.path = /usr/bin
-	icon.files = icons/qyledl.svg
+    icon.files = icons/qyledl.svg
     icon.path = /usr/share/pixmaps
-	desktopFile.files = qyledl.desktop
+    desktopFile.files = qyledl.desktop
     desktopFile.path = /usr/share/applications
     INSTALLS += target icon desktopFile
 }
@@ -58,5 +58,5 @@ RC_FILE = windows-resources.rc
 OTHER_FILES += \
     windows-resources.rc \
     README.md \
-	"Tietoa_ohjelmasta.txt" \
+    "Tietoa_ohjelmasta.txt" \
     update.xml
