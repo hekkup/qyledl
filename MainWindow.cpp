@@ -141,6 +141,7 @@ void MainWindow::saveSubtitlesChoice()
 void MainWindow::saveSession()
 {
     m_settings.setValue("language", QVariant(this->locale().name()));
+    m_settings.setValue("yleDlOptions", QVariant(ui->yleDlExtraOptionsLineEdit->text()));
 
     m_settings.beginGroup("LastSession");
     m_settings.remove("session");
@@ -158,6 +159,9 @@ void MainWindow::saveSession()
 
 void MainWindow::restoreSession()
 {
+    QString yleDlExtraOptions = m_settings.value("yleDlOptions", QVariant("")).toString();
+    ui->yleDlExtraOptionsLineEdit->setText(yleDlExtraOptions);
+
     m_settings.beginGroup("LastSession");
     int videoCount = m_settings.beginReadArray("session");
     for (int i = 0; i < videoCount; i++) {
