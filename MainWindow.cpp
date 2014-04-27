@@ -520,6 +520,7 @@ QDir MainWindow::defaultDestDir()
     dlDirs += tr("downloads");
     dlDirs += tr("download");
     dlDirs += "Desktop";
+    dlDirs += tr("Desktop");
     foreach (QString dlDir, dlDirs) {
         if (dir.cd(dlDir)) {
             break;

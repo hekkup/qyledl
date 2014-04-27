@@ -185,6 +185,11 @@
         <source>download</source>
         <translation>lataus</translation>
     </message>
+    <message>
+        <location filename="MainWindow.cpp" line="523"/>
+        <source>Desktop</source>
+        <translation>Työpöytä</translation>
+    </message>
 </context>
 <context>
     <name>QDialogButtonBox</name>
