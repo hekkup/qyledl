@@ -23,6 +23,7 @@ namespace Ui {
  * @todo open a text file: get URLs from each line
  * @todo at some point, add options dialog (then can remove extra options line edit)
  * @todo many rows loading, deleting all, then stopping dl -> doesn't quit properly
+ * @todo remove confirmation dialog of stop download
  */
 class MainWindow: public QMainWindow
 {
@@ -72,14 +73,17 @@ private slots:
     void openUrl(QString url);
 
     void on_actionQuit_triggered(bool checked = false);
-    void on_openDownloadFolderPushButton_clicked(bool checked = false);
     void on_actionFinnish_triggered(bool checked = false);
     void on_actionEnglish_triggered(bool checked = false);
+
+    void on_openDownloadFolderPushButton_clicked(bool checked = false);
+    void on_detailsButton_clicked(bool checked = false);
 
 protected:
     void closeEvent(QCloseEvent* event);
     void showEvent(QShowEvent* event);
     void changeEvent(QEvent* event);
+    void resizeEvent(QResizeEvent* event);
 
     /**
      * Tell URL dropping is possible

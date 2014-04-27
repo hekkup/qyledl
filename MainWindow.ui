@@ -6,24 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>652</width>
-    <height>801</height>
+    <width>700</width>
+    <height>446</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>YLE Areena downloader</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="sizeConstraint">
-     <enum>QLayout::SetFixedSize</enum>
-    </property>
     <item>
      <spacer name="horizontalSpacer">
       <property name="orientation">
@@ -39,15 +30,33 @@
     </item>
     <item>
      <widget class="QWidget" name="destDirWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
        <property name="topMargin">
         <number>3</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
        </property>
        <property name="bottomMargin">
         <number>3</number>
        </property>
        <item>
         <widget class="QLabel" name="destDirLabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
           <string>Download folder</string>
          </property>
@@ -90,6 +99,18 @@
     </item>
     <item>
      <widget class="VideoTableView" name="videoTableView">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>100</height>
+       </size>
+      </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOn</enum>
       </property>
@@ -107,11 +128,14 @@
     <item>
      <widget class="QWidget" name="subtitlesWidget" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
        <property name="topMargin">
         <number>3</number>
        </property>
        <property name="rightMargin">
-        <number>9</number>
+        <number>0</number>
        </property>
        <property name="bottomMargin">
         <number>3</number>
@@ -148,11 +172,14 @@
     <item>
      <widget class="QWidget" name="downloadWidget" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
        <property name="topMargin">
         <number>3</number>
        </property>
        <property name="rightMargin">
-        <number>9</number>
+        <number>0</number>
        </property>
        <property name="bottomMargin">
         <number>3</number>
@@ -177,8 +204,14 @@
     <item>
      <widget class="QWidget" name="statusWidget" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
        <property name="topMargin">
         <number>3</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
        </property>
        <property name="bottomMargin">
         <number>3</number>
@@ -235,8 +268,14 @@
     <item>
      <widget class="QWidget" name="detailsWidget" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
        <property name="topMargin">
         <number>3</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
        </property>
        <property name="bottomMargin">
         <number>3</number>
@@ -244,13 +283,13 @@
        <item>
         <layout class="QHBoxLayout" name="extraOptionsWidget">
          <property name="leftMargin">
-          <number>9</number>
+          <number>0</number>
          </property>
          <property name="topMargin">
           <number>3</number>
          </property>
          <property name="rightMargin">
-          <number>9</number>
+          <number>0</number>
          </property>
          <property name="bottomMargin">
           <number>3</number>
@@ -263,7 +302,14 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="yleDlExtraOptionsLineEdit"/>
+          <widget class="QLineEdit" name="yleDlExtraOptionsLineEdit">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -272,7 +318,7 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>280</height>
+           <height>100</height>
           </size>
          </property>
          <property name="readOnly">
@@ -290,7 +336,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>652</width>
+     <width>700</width>
      <height>20</height>
     </rect>
    </property>

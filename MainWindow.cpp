@@ -36,8 +36,6 @@ MainWindow::MainWindow(QWidget *parent) :
     m_languageActionGroup->addAction(ui->actionFinnish);
     m_languageActionGroup->addAction(ui->actionEnglish);
 
-    layout()->setSizeConstraint(QLayout::SetFixedSize);
-
     m_videoTableModel = new VideoTableModel();
     if (m_videoTableModel) {
         ui->videoTableView->setModel(m_videoTableModel);
@@ -69,8 +67,6 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->downloadButton, SIGNAL(clicked()), this, SLOT(startDownload()));
 
     connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(cancelRequested()));
-
-    connect(ui->detailsButton, SIGNAL(toggled(bool)), ui->detailsWidget, SLOT(setVisible(bool)));
 
     connect(m_updateChecker, SIGNAL(updateAvailable(QString,QUrl)), this, SLOT(updateAvailable(QString,QUrl)));
     connect(ui->updateLabel, SIGNAL(linkActivated(QString)), this, SLOT(openUrl(QString)));
@@ -379,6 +375,11 @@ void MainWindow::on_actionEnglish_triggered(bool checked) {
     this->setLocale(QLocale::English);
 }
 
+void MainWindow::on_detailsButton_clicked(bool checked) {
+    Q_UNUSED(checked);
+    ui->detailsWidget->setVisible(!ui->detailsWidget->isVisible());
+}
+
 void MainWindow::closeEvent(QCloseEvent* event)
 {
     if (m_downloadInProgress) {
@@ -413,6 +414,11 @@ void MainWindow::changeEvent(QEvent *event)
     } else {
         QMainWindow::changeEvent(event);
     }
+}
+
+void MainWindow::resizeEvent(QResizeEvent* event) {
+    Q_UNUSED(event);
+    updateVideoTableView();
 }
 
 void MainWindow::dragEnterEvent(QDragEnterEvent* event) {
@@ -484,10 +490,11 @@ void MainWindow::updateDestDirLabel()
 void MainWindow::updateVideoTableView()
 {
     int urlTableWidth = ui->videoTableView->viewport()->width();
+    int narrowColumnWidth = urlTableWidth / 5;
     QHeaderView* header = ui->videoTableView->horizontalHeader();
-    header->resizeSection(VideoTableModel::UrlColumn, urlTableWidth * 3 / 5);
-    header->resizeSection(VideoTableModel::ProgressColumn, urlTableWidth / 5);
-    header->resizeSection(VideoTableModel::StatusColumn, urlTableWidth / 5);
+    header->resizeSection(VideoTableModel::UrlColumn, urlTableWidth - 2 * narrowColumnWidth);
+    header->resizeSection(VideoTableModel::ProgressColumn, narrowColumnWidth);
+    header->resizeSection(VideoTableModel::StatusColumn, narrowColumnWidth);
 #ifdef QT_5_0
     header->setSectionResizeMode(VideoTableModel::UrlColumn, QHeaderView::Fixed);
     header->setSectionResizeMode(VideoTableModel::ProgressColumn, QHeaderView::Fixed);
