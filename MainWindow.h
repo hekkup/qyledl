@@ -23,7 +23,6 @@ namespace Ui {
  * @todo open a text file: get URLs from each line
  * @todo at some point, add options dialog (then can remove extra options line edit)
  * @todo many rows loading, deleting all, then stopping dl -> doesn't quit properly
- * @todo remove confirmation dialog of stop download
  */
 class MainWindow: public QMainWindow
 {
@@ -112,8 +111,6 @@ private:
     bool m_saveAndRestoreSession;   ///< whether to save & restore session (video list + states)
 
     void initSubtitlesComboBox();
-
-    bool confirmCancel();
 
     void downloadEnded();
     void setDownloadWidgetsDisabled(bool disabled);

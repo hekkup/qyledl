@@ -215,6 +215,7 @@ void MainWindow::startDownload()
     ui->detailsTextEdit->clear();
     setDownloadWidgetsDisabled(true);
     ui->stopButton->setVisible(true);
+    ui->stopButton->setEnabled(true);
 
     setCurrentlyDownloadingVideoRow(-1);
     startNextDownload();
@@ -324,13 +325,8 @@ void MainWindow::downloadFailed()
 void MainWindow::cancelRequested()
 {
     if (m_downloadInProgress) {
-        if (confirmCancel()) {
-            if (m_downloadInProgress) {
-                m_downloader->cancel();
-            } else {
-                qWarning() << "Download finished while confirming cancel.";
-            }
-        }
+        ui->stopButton->setEnabled(false);
+        m_downloader->cancel();
     } else {
         qWarning() << "Cancel requested while no download in progress.";
     }
@@ -383,7 +379,13 @@ void MainWindow::on_detailsButton_clicked(bool checked) {
 void MainWindow::closeEvent(QCloseEvent* event)
 {
     if (m_downloadInProgress) {
-        if (confirmCancel()) {
+        QMessageBox::StandardButton choice =
+                QMessageBox::question(this,
+                                      this->windowTitle(),
+                                      tr("Download in progress, really quit?"),
+                                      QMessageBox::Yes | QMessageBox::No,
+                                      QMessageBox::Yes);
+        if (choice == QMessageBox::Yes) {
             if (m_downloadInProgress) {
                 m_downloader->cancel();
             }
@@ -445,18 +447,6 @@ void MainWindow::initSubtitlesComboBox()
     }
 
     connect(ui->subtitlesComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(saveSubtitlesChoice()));
-}
-
-bool MainWindow::confirmCancel()
-{
-    QMessageBox::StandardButton choice =
-            QMessageBox::question(this,
-                                  this->windowTitle(),
-                                  tr("Really stop download?"),
-                                  QMessageBox::Yes | QMessageBox::No,
-                                  QMessageBox::Yes);
-
-    return (choice == QMessageBox::Yes);
 }
 
 void MainWindow::downloadEnded()
