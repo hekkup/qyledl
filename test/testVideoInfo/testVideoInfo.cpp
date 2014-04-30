@@ -54,7 +54,7 @@ void TestVideoInfo::constructor() {
     QVERIFY("Starting..." == m_videoInfo->m_videoStateStrings[VideoInfo::StateStarting]);
     QVERIFY("Loading..." == m_videoInfo->m_videoStateStrings[VideoInfo::StateLoading]);
     QVERIFY("Loaded" == m_videoInfo->m_videoStateStrings[VideoInfo::StateLoadedOk]);
-    QVERIFY("Canceled" == m_videoInfo->m_videoStateStrings[VideoInfo::StateCanceled]);
+    QVERIFY("Stopped" == m_videoInfo->m_videoStateStrings[VideoInfo::StateCanceled]);
     QVERIFY("Failed" == m_videoInfo->m_videoStateStrings[VideoInfo::StateFailed]);
 
 }
@@ -128,7 +128,7 @@ void TestVideoInfo::stateString() {
     QVERIFY("Starting..." == m_videoInfo->stateString(VideoInfo::StateStarting));
     QVERIFY("Loading..." == m_videoInfo->stateString(VideoInfo::StateLoading));
     QVERIFY("Loaded" == m_videoInfo->stateString(VideoInfo::StateLoadedOk));
-    QVERIFY("Canceled" == m_videoInfo->stateString(VideoInfo::StateCanceled));
+    QVERIFY("Stopped" == m_videoInfo->stateString(VideoInfo::StateCanceled));
     QVERIFY("Failed" == m_videoInfo->stateString(VideoInfo::StateFailed));
 
     QVERIFY("" == m_videoInfo->stateString((VideoInfo::VideoState)-1));

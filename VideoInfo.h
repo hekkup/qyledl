@@ -31,11 +31,11 @@ public:
     /**
      * Get current download progress percentage
      */
-    int progress();
+    double progress();
 
-    int progressMinimum();
+    double progressMinimum();
 
-    int progressMaximum();
+    double progressMaximum();
 
     QString progressText();
 
@@ -61,19 +61,18 @@ public:
 
     /**
      * Set video download progress
-     * @deprecated
      */
-    void setProgress(int progress);
+    void setProgress(double progress);
 
     /**
      * Set progress bar minimum value
      */
-    void setProgressMinimum(int progressMinimum);
+    void setProgressMinimum(double progressMinimum);
 
     /**
      * Set progress bar maximum value
      */
-    void setProgressMaximum(int progressMaximum);
+    void setProgressMaximum(double progressMaximum);
 
     /**
      * Set text to be displayed on progress bar

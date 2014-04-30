@@ -58,7 +58,7 @@ public:
      * Set a known download progress (percentage).
      * @param showText Whether to set progress text for progress bar
      */
-    bool setKnownDownloadProgress(int row, int progress, bool showText = true);
+    bool setKnownDownloadProgress(int row, double progress, bool showText = true);
 
     /**
      * Set an unknown download progress with text.
@@ -71,7 +71,7 @@ public:
      * set progress.
      * @return progress if it's known, -1 if it's unknown
      */
-    int downloadProgress(int row);
+    double downloadProgress(int row);
 
     /**
      * Set download state.

@@ -59,9 +59,9 @@ bool ProgressParser::tryAsFileNameLineLine(QString line)
 
 bool ProgressParser::tryAsProgressLine(QString line)
 {
-    QRegExp regex("^.* / .* sec \\((\\d+).*%\\)$");
+    QRegExp regex("^.* / .* sec \\(([\\d\\.]+).*%\\)$");
     if (regex.exactMatch(line)) {
-        int newPercentage = regex.cap(1).toInt();
+        double newPercentage = regex.cap(1).toDouble();
         if ((newPercentage > m_percentage) || !m_firstPercentageReported) {
             emit progressMade(newPercentage);
             m_firstPercentageReported = true;

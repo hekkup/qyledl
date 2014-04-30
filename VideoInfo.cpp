@@ -4,9 +4,9 @@ VideoInfo::VideoInfo(QObject *parent) :
     QObject(parent)
 {
     m_url = QString("");
-    m_progress = 0;
-    m_progressMinimum = 0;
-    m_progressMaximum = 100;
+    m_progress = 0.0;
+    m_progressMinimum = 0.0;
+    m_progressMaximum = 100.0;
     m_progressText = QString("");
     m_videoState = VideoInfo::StateNotStarted;
     m_videoStateStrings[VideoInfo::StateNotStarted] = tr("Not started");
@@ -20,9 +20,9 @@ VideoInfo::VideoInfo(QObject *parent) :
 
 VideoInfo::~VideoInfo() {
     m_url = "";
-    m_progress = 0;
-    m_progressMinimum = 0;
-    m_progressMaximum = 100;
+    m_progress = 0.0;
+    m_progressMinimum = 0.0;
+    m_progressMaximum = 100.0;
     m_progressText = "";
     m_videoState = StateNotStarted;
 }
@@ -31,15 +31,15 @@ QString VideoInfo::url() {
     return m_url;
 }
 
-int VideoInfo::progress() {
+double VideoInfo::progress() {
     return m_progress;
 }
 
-int VideoInfo::progressMinimum() {
+double VideoInfo::progressMinimum() {
     return m_progressMinimum;
 }
 
-int VideoInfo::progressMaximum() {
+double VideoInfo::progressMaximum() {
     return m_progressMaximum;
 }
 
@@ -65,15 +65,15 @@ void VideoInfo::setUrl(QString url) {
     m_url = url;
 }
 
-void VideoInfo::setProgress(int progress) {
+void VideoInfo::setProgress(double progress) {
     m_progress = progress;
 }
 
-void VideoInfo::setProgressMinimum(int progressMinimum) {
+void VideoInfo::setProgressMinimum(double progressMinimum) {
     m_progressMinimum = progressMinimum;
 }
 
-void VideoInfo::setProgressMaximum(int progressMaximum) {
+void VideoInfo::setProgressMaximum(double progressMaximum) {
     m_progressMaximum = progressMaximum;
 }
 

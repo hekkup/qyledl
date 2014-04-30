@@ -571,7 +571,7 @@ void TestVideoTableModel::setKnownDownloadProgress() {
     for (int i=0; i < 2; i++) {
         QVERIFY(m_videoTableModel->setKnownDownloadProgress(i, 15 + i));
 
-        QString expectedText = QString::number(15 + i) + "%";
+        QString expectedText = QString::number(15.0 + i, 'f', 1) + "%";
         QModelIndex index = m_videoTableModel->index(i, VideoTableModel::ProgressColumn);
         QVERIFY((15 + i) == m_videoTableModel->data(index, VideoTableModel::ProgressRole).toInt());
         QVERIFY(0 == m_videoTableModel->data(index, VideoTableModel::ProgressMinimumRole).toInt());

@@ -257,7 +257,7 @@ void MainWindow::startNextDownload() {
     connect(m_downloader, SIGNAL(downloadFailed()), this, SLOT(downloadFailed()));
 
     connect(m_downloader, SIGNAL(downloadFileCreated(QString)), this, SLOT(reportDestFileName(QString)));
-    connect(m_downloader, SIGNAL(downloadProgress(int)), this, SLOT(reportProgress(int)));
+    connect(m_downloader, SIGNAL(downloadProgress(double)), this, SLOT(reportProgress(double)));
     connect(m_downloader, SIGNAL(downloadUnknownProgress(double)), this, SLOT(reportUnknownProgress(double)));
     connect(m_downloader, SIGNAL(downloaderOutputWritten(QString)), this, SLOT(downloaderOutputWritten(QString)));
 
@@ -276,7 +276,7 @@ void MainWindow::reportDestFileName(QString name)
     m_videoTableModel->setVideoFileName(currentlyDownloadingVideoRow(), name);
 }
 
-void MainWindow::reportProgress(int percentage)
+void MainWindow::reportProgress(double percentage)
 {
     m_videoTableModel->setKnownDownloadProgress(currentlyDownloadingVideoRow(), percentage);
     m_videoTableModel->setDownloadState(currentlyDownloadingVideoRow(), VideoInfo::StateLoading);

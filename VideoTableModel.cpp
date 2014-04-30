@@ -46,11 +46,11 @@ QString VideoTableModel::url(int row) {
     }
 }
 
-bool VideoTableModel::setKnownDownloadProgress(int row, int progress, bool showText) {
+bool VideoTableModel::setKnownDownloadProgress(int row, double progress, bool showText) {
     QModelIndex index = this->index(row, VideoTableModel::ProgressColumn);
     QString text;
     if (showText) {
-        text = QString::number(progress) + "%";
+        text = QString::number(progress, 'f', 1) + "%";
     } else {
         text = "";
     }
@@ -72,11 +72,11 @@ bool VideoTableModel::setUnknownDownloadProgress(int row, QString text) {
     return ok;
 }
 
-int VideoTableModel::downloadProgress(int row) {
+double VideoTableModel::downloadProgress(int row) {
     QModelIndex index = this->index(row, VideoTableModel::ProgressColumn);
     QVariant dataItem = this->data(index, VideoTableModel::ProgressRole);
     if (dataItem.isValid()) {
-        return dataItem.toInt();
+        return dataItem.toDouble();
     }
     return 0;
 }
@@ -299,7 +299,7 @@ bool VideoTableModel::setData(const QModelIndex &index, const QVariant &value, i
     if ((Qt::UserRole == role) || (VideoTableModel::ProgressRole == role)) {
         switch (index.column()) {
             case ProgressColumn: {
-                int progress = value.toInt();
+                double progress = value.toDouble();
                 videoInfo->setProgress(progress);
                 emit dataChanged(index, index);
             }
@@ -322,7 +322,7 @@ bool VideoTableModel::setData(const QModelIndex &index, const QVariant &value, i
     if ((VideoTableModel::ProgressMinimumRole == role) &&
             (index.column() == VideoTableModel::ProgressColumn))
     {
-        videoInfo->setProgressMinimum(value.toInt());
+        videoInfo->setProgressMinimum(value.toDouble());
         emit dataChanged(index, index);
         return true;
     }
@@ -330,7 +330,7 @@ bool VideoTableModel::setData(const QModelIndex &index, const QVariant &value, i
     if ((VideoTableModel::ProgressMaximumRole == role) &&
             (index.column() == VideoTableModel::ProgressColumn))
     {
-        videoInfo->setProgressMaximum(value.toInt());
+        videoInfo->setProgressMaximum(value.toDouble());
         emit dataChanged(index, index);
         return true;
     }

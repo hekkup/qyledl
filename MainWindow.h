@@ -55,7 +55,7 @@ private slots:
     void startNextDownload();
 
     void reportDestFileName(QString name);
-    void reportProgress(int percentage);
+    void reportProgress(double percentage);
     void reportUnknownProgress(double secondsDownloaded);
     void downloaderOutputWritten(QString line);
     void downloadSucceeded();

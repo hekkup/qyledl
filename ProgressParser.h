@@ -14,12 +14,12 @@ public:
 
 signals:
     void fileNameDetermined(QString fileName);
-    void progressMade(int percentage);
+    void progressMade(double percentage);
     void indeterminateProgressMade(double secondsDownloaded);
     void outputLineSeen(QString line);
 
 private:
-    int m_percentage;
+    double m_percentage;
     bool m_gotFileName;
     QByteArray m_lineBuffer;
     bool m_firstPercentageReported;
