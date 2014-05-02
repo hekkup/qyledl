@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=YLE Areena Downloader
 Name[fi_FI]=YLE Areena -lataaja
-Version=2.3
+Version=2.4
 Icon=qyledl
 Comment=An application for downloading videos from Yle Areena
 Comment[fi_FI]=Ohjelma videoiden lataamiseen Yle Areenasta

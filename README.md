@@ -58,6 +58,10 @@ The source code contains installer/innosetup_installer.iss file but it's outdate
 
 ## Version History ##
 
+- 2.4 (2014-05-02)
+    * Enabled resizing main window
+    * Showing download progress at tenths of percentage
+
 - 2.3 (2013-11-05)
     * New fork: qyledl
     * Version numbering continued directly from yle-downloader-gui
