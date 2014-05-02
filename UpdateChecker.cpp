@@ -11,7 +11,7 @@ UpdateChecker::UpdateChecker(QObject *parent)
 
 void UpdateChecker::checkForUpdate()
 {
-    QUrl downloadUrl("https://raw.github.com/hekkup/qyledl/master/update.xml");
+    QUrl downloadUrl("https://raw.githubusercontent.com/hekkup/qyledl/master/update.xml");
     QNetworkRequest req(downloadUrl);
     m_nam->get(req);
 }
