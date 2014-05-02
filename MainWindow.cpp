@@ -43,6 +43,8 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     m_currentlyDownloadingVideoRow = -1;
 
+    m_detailsWidgetHeight = ui->detailsWidget->height();
+
 #ifdef Q_OS_WIN
     m_resumeDownload = false;
 #else
@@ -373,7 +375,12 @@ void MainWindow::on_actionEnglish_triggered(bool checked) {
 
 void MainWindow::on_detailsButton_clicked(bool checked) {
     Q_UNUSED(checked);
-    ui->detailsWidget->setVisible(!ui->detailsWidget->isVisible());
+    if (ui->detailsWidget->isVisible()) {
+        ui->detailsWidget->setVisible(false);
+    } else {
+        ui->detailsWidget->setVisible(true);
+        m_detailsWidgetHeight = ui->detailsWidget->height();
+    }
 }
 
 void MainWindow::closeEvent(QCloseEvent* event)
@@ -421,6 +428,11 @@ void MainWindow::changeEvent(QEvent *event)
 void MainWindow::resizeEvent(QResizeEvent* event) {
     Q_UNUSED(event);
     updateVideoTableView();
+    if (ui->detailsWidget->isVisible()) {
+        QRect detailsGeometry = ui->detailsWidget->geometry();
+        detailsGeometry.setHeight(m_detailsWidgetHeight);
+        ui->detailsWidget->setGeometry(detailsGeometry);
+    }
 }
 
 void MainWindow::dragEnterEvent(QDragEnterEvent* event) {

@@ -2,5 +2,5 @@
 <qyledl>
     <!-- Prefer to only put a new version here if yle-dl is updated to fix a download problem. -->
     <latestWindowsVersion version="2.2" url="http://yle-downloader-gui.s3-website-eu-west-1.amazonaws.com/setup-yle-downloader-gui-2.2.exe" />
-    <latestSourceVersion version="2.2" url="https://github.com/hekkup/qyledl" />
+    <latestSourceVersion version="2.3" url="https://github.com/hekkup/qyledl" />
 </qyledl>

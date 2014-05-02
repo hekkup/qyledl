@@ -1,11 +1,11 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=YLE Downloader GUI
+Name=YLE Areena Downloader
 Name[fi_FI]=YLE Areena -lataaja
-Version=2.2
+Version=2.3
 Icon=qyledl
 Comment=An application for downloading videos from Yle Areena
-Comment[fi_FI]=Ohjelma videoiden lataamiseksi Yle Areenasta
+Comment[fi_FI]=Ohjelma videoiden lataamiseen Yle Areenasta
 Exec=/usr/bin/qyledl
 Terminal=false
 Type=Application

@@ -130,6 +130,7 @@ private:
     QAbstractItemView::EditTriggers m_videoTableEditTriggers;
 
     int m_currentlyDownloadingVideoRow; ///< current video index in m_videoTableModel
+    int m_detailsWidgetHeight;
 };
 
 #endif // MAINWINDOW_H
